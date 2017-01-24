@@ -1,0 +1,7 @@
+services:
+    viweb_media.media_listener:
+        class: Viweb\MediaBundle\EventListener\MediaUploadListener
+        arguments: ['%kernel.root_dir%/../web/uploads/images']
+        tags:
+            - { name: doctrine.event_listener, event: prePersist }
+            - { name: doctrine.event_listener, event: preUpdate }

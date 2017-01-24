@@ -1,0 +1,15 @@
+{
+    "name": "viweb/media-bundle",
+    "description": "Media bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pierre-Marc David Caron",
+            "email": "pierre-marc@viweb.ca"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0"
+    }
+}

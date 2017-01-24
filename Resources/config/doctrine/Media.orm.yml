@@ -1,0 +1,21 @@
+Viweb\MediaBundle\Entity\Media:
+    type: entity
+    table: null
+    repositoryClass: Viweb\MediaBundle\Repository\MediaRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: '500'
+        path:
+            type: string
+            length: '1024'
+        filename:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
