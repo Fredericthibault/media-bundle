@@ -30,4 +30,9 @@ class MediaType extends AbstractType
             'data_class' => Media::class,
         ));
     }
+
+    public function getBlockPrefix()
+    {
+        return 'viweb_media';
+    }
 }

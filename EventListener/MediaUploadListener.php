@@ -37,7 +37,7 @@ class MediaUploadListener
         $entity->setFilename($file->getClientOriginalName() . $file->guessExtension());
         $file->move($this->baseDir, $fileName);
 
-        $entity->setPath($this->baseDir . $fileName);
+        $entity->setPath($this->baseDir . '/' . $fileName);
         $entity->setName($file->getClientOriginalName());
 
         return $fileName;
