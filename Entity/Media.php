@@ -109,5 +109,10 @@ class Media
     {
         return $this->filename;
     }
+
+    public function getRenderPath()
+    {
+        return $this->getPath() ? explode('/web',$this->getPath())[1] : null;
+    }
 }
 
