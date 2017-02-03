@@ -27,7 +27,7 @@ class MediaUploadListener
     private function upload($entity)
     {
         if(!$entity instanceof Media || !$entity->getPath() instanceof UploadedFile){
-            return ;
+            return null;
         }
         /**
          * @var UploadedFile $file;
