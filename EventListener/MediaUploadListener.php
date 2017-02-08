@@ -24,10 +24,13 @@ class MediaUploadListener
         $this->baseDir = $baseDir;
     }
 
-    private function upload($entity)
+    private function upload($entity, $oldPath = null)
     {
         if(!$entity instanceof Media || !$entity->getPath() instanceof UploadedFile){
-            return null;
+            if($oldPath){
+                $entity->setPath($oldPath);
+            }
+            return $entity;
         }
         /**
          * @var UploadedFile $file;
@@ -52,8 +55,13 @@ class MediaUploadListener
 
     public function preUpdate(PreUpdateEventArgs $args)
     {
+        $changes = $args->getEntityChangeSet();
+        $path = null;
+        if(array_key_exists('path', $changes) && $changes['path'][1] == null){
+            $path = $changes['path'][0];
+        }
         $entity = $args->getEntity();
 
-        $this->upload($entity);
+        $this->upload($entity, $path);
     }
 }
